@@ -8,14 +8,14 @@ import (
 )
 
 const (
-	DBHost  = "127.0.0.1"
-	DBPort  = ":3306"
-	DBUser  = "root"
-	DBPass  = ""
-	DBDbase = "cms"
+	dbHost  = "127.0.0.1"
+	dbPort  = ":3306"
+	dbUser  = "root"
+	dbPass  = ""
+	dbDbase = "cms"
 )
 
 func InitializeDB() (*sql.DB, error) {
-	dbConn := fmt.Sprintf("%s:%s@tcp(%s)/%s", DBUser, DBPass, DBHost, DBDbase)
+	dbConn := fmt.Sprintf("%s:%s@tcp(%s)/%s", dbUser, dbPass, dbHost, dbDbase)
 	return sql.Open("mysql", dbConn)
 }
