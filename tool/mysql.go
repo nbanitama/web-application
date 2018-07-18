@@ -15,6 +15,7 @@ const (
 	dbDbase = "cms"
 )
 
+// to initialize DB connection
 func InitializeDB() (*sql.DB, error) {
 	dbConn := fmt.Sprintf("%s:%s@tcp(%s)/%s", dbUser, dbPass, dbHost, dbDbase)
 	return sql.Open("mysql", dbConn)
